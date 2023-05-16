@@ -4,11 +4,10 @@ description: >-
   livestreams
 ---
 
-# Add routes to the navigation system of your application
+# Setup routing for the new screens to be added
 
 Register the following routes in the existing navigation system of your app. In the example app, the navigation is defined in `app/src/main/java/com/example/instasellliveembed/ui/nav/Navigation.kt`
 
-````kotlin
 ```kotlin
 // You do not need to add the whole file. Incase you already have a navigation system in place just register these screens as well.
 package com.example.instasellliveembed.ui.nav
@@ -61,7 +60,6 @@ fun SetupNavHost(navController: NavHostController, livestreamInfoViewModel: Live
 
 }
 ```
-````
 
 
 

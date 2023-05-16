@@ -16,7 +16,7 @@ The example app shown here is built using Jetpack Compose and Kotlin. The depend
 
 To add these dependencies to your project, add the following to the dependencies in your `app/build.gradle`:
 
-{% code title="app/build.gradle" %}
+{% code title="" %}
 ```groovy
     // Retrofit2
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
