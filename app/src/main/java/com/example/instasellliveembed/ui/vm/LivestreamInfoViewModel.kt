@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.instasellliveembed.data.remote.GetLivestreamInfoBody
 import com.example.instasellliveembed.data.remote.models.LivestreamInfoModel
 import com.example.instasellliveembed.domain.GetLivestreamInfoUseCase
+import com.example.instasellliveembed.util.Constants.Companion.ORIGIN_FQDN
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -30,7 +31,7 @@ class LivestreamInfoViewModel @Inject constructor(
         viewModelScope.launch {
             try {
                 val livestreamInfo = getLivestreamInfoUseCase(GetLivestreamInfoBody(
-                    originFqdn = "archi-cosmetics.myshopify.com"
+                    originFqdn = ORIGIN_FQDN
                 ))
                 _livestreamInfo.value = livestreamInfo
             } catch (_: Exception) {}
