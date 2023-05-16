@@ -1,4 +1,5 @@
-# Integrating the Instasell Livestreaming player app to your existing Android application (overview)
+# Integrating the Instasell Livestreaming player app to your existing Android application (overview).
+Alternatively you can go [here](https://rahuls-organization-3.gitbook.io/instasell-livestreaming-android-app-integration/)
 
 The example app shown here is built using Jetpack Compose and Kotlin. The dependencies used to create this app are:
 
@@ -39,4 +40,3 @@ To add these dependencies to your project, add the following to the dependencies
     implementation 'androidx.core:core-ktx:+'
     kapt "com.google.dagger:hilt-android-compiler:2.43.2"
 ```
-
