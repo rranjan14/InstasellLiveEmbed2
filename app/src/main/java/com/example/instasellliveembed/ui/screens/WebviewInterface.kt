@@ -1,11 +1,9 @@
 package com.example.instasellliveembed.ui.screens
 
 import android.content.Context
-import android.util.Log
 import android.webkit.JavascriptInterface
 import android.widget.Toast
 import org.json.JSONObject
-import java.util.*
 
 /** Instantiate the interface and set the context  */
 class WebViewInterface(private val context: Context) {

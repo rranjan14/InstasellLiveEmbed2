@@ -1,9 +1,7 @@
 package com.example.instasellliveembed.data.remote
 
 import android.annotation.SuppressLint
-import android.util.Log
 import com.example.instasellliveembed.data.remote.models.LivestreamInfoModel
-import com.example.instasellliveembed.data.remote.models.LivestreamModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.IOException
@@ -22,7 +20,6 @@ class LivestreamService @Inject constructor(private val livestreamApi: Livestrea
             val response = livestreamApi.getLivestreamInfo(requestBody)
                 if(response.isSuccessful) {
                     val responseBody = response.body()
-                    Log.d("response body => ",responseBody.toString())
 
                     val updatedCurrentLivestream = responseBody?.currentLivestream
                     val updatedPastLivestreams = responseBody?.pastLivestreams

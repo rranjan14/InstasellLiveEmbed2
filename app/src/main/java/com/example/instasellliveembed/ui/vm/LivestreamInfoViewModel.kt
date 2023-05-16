@@ -1,6 +1,5 @@
 package com.example.instasellliveembed.ui.vm
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -33,7 +32,6 @@ class LivestreamInfoViewModel @Inject constructor(
                 val livestreamInfo = getLivestreamInfoUseCase(GetLivestreamInfoBody(
                     originFqdn = "archi-cosmetics.myshopify.com"
                 ))
-                Log.d("Livestream info vm => ",livestreamInfo.toString())
                 _livestreamInfo.value = livestreamInfo
             } catch (_: Exception) {}
         }
