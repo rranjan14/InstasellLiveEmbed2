@@ -19,7 +19,7 @@ import com.example.instasellliveembed.util.Constants.Companion.WEBVIEW_URL
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun PlayerWebViewScreen(livestreamId:String, navController: NavController) {
+fun InstasellPlayerScreen(livestreamId:String, navController: NavController) {
     val url = Uri
         .Builder()
         .scheme("https")

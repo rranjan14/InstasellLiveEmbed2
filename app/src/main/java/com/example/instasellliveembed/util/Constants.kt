@@ -11,8 +11,8 @@ class Constants {
     }
 
     object Screens {
-        const val HOME_SCREEN = "home_screen"
-        const val VIDEO_PLAYER_SCREEN = "video_player_screen"
+        const val INSTASELL_LIVESTREAM_LIST = "instasell_livestream_list"
+        const val INSTASELL_VIDEO_PLAYER_SCREEN = "instasell_video_player_screen"
     }
 
 }

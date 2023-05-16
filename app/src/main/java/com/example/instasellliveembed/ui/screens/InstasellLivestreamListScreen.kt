@@ -37,7 +37,7 @@ import com.example.instasellliveembed.ui.vm.LivestreamInfoViewModel
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 @Composable
-fun HomeScreen(livestreamInfoViewModel: LivestreamInfoViewModel, navController: NavController) {
+fun InstasellLivestreamListScreen(livestreamInfoViewModel: LivestreamInfoViewModel, navController: NavController) {
     val livestreamInfo = livestreamInfoViewModel.livestreamInfo.observeAsState().value
 
     Scaffold(
@@ -84,7 +84,7 @@ fun LivestreamCard(livestream: LivestreamModel, navController: NavController) {
             .fillMaxWidth()
             .padding(horizontal = 16.dp, vertical = 8.dp)
             .clickable {
-            navController.navigate(Screens.VideoPlayer.createRoute(livestream.id))
+            navController.navigate(Screens.InstasellVideoPlayer.createRoute(livestream.id))
         },
         shape = RoundedCornerShape(8.dp),
         elevation = CardDefaults.cardElevation(

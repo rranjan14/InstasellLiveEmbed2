@@ -6,17 +6,17 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.example.instasellliveembed.ui.vm.LivestreamInfoViewModel
-import com.example.instasellliveembed.ui.screens.HomeScreen
-import com.example.instasellliveembed.ui.screens.PlayerWebViewScreen
-import com.example.instasellliveembed.util.Constants.Screens.VIDEO_PLAYER_SCREEN
-import com.example.instasellliveembed.util.Constants.Screens.HOME_SCREEN
+import com.example.instasellliveembed.ui.screens.InstasellLivestreamListScreen
+import com.example.instasellliveembed.ui.screens.InstasellPlayerScreen
+import com.example.instasellliveembed.util.Constants.Screens.INSTASELL_LIVESTREAM_LIST
+import com.example.instasellliveembed.util.Constants.Screens.INSTASELL_VIDEO_PLAYER_SCREEN
 
 sealed class Screens (val route: String){
 
-    object Home: Screens(route = HOME_SCREEN)
-    object VideoPlayer: Screens(route = "$VIDEO_PLAYER_SCREEN/{livestreamId}"){
+    object InstasellLivestreamList: Screens(route = INSTASELL_LIVESTREAM_LIST)
+    object InstasellVideoPlayer: Screens(route = "$INSTASELL_VIDEO_PLAYER_SCREEN/{livestreamId}"){
         fun createRoute(livestreamId: String): String {
-            return "$VIDEO_PLAYER_SCREEN/$livestreamId"
+            return "$INSTASELL_VIDEO_PLAYER_SCREEN/$livestreamId"
         }
     }
 
@@ -25,17 +25,17 @@ sealed class Screens (val route: String){
 @Composable
 fun SetupNavHost(navController: NavHostController, livestreamInfoViewModel: LivestreamInfoViewModel) {
 
-    NavHost(navController = navController, startDestination = Screens.Home.route) {
+    NavHost(navController = navController, startDestination = Screens.InstasellLivestreamList.route) {
 
-        composable(route = Screens.Home.route) {
-            HomeScreen(livestreamInfoViewModel = livestreamInfoViewModel, navController = navController)
+        composable(route = Screens.InstasellLivestreamList.route) {
+            InstasellLivestreamListScreen(livestreamInfoViewModel = livestreamInfoViewModel, navController = navController)
         }
 
         composable(
-            Screens.VideoPlayer.route,
+            Screens.InstasellVideoPlayer.route,
             arguments = listOf(navArgument("livestreamId") { type = NavType.StringType })
         ) { backStackEntry ->
-            PlayerWebViewScreen(
+            InstasellPlayerScreen(
                 livestreamId = backStackEntry.arguments?.getString("livestreamId") ?: "",
                 navController = navController
             )
