@@ -13,6 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.navigation.NavController
+import com.example.instasellliveembed.util.Constants.Companion.ORIGIN_FQDN
 import com.example.instasellliveembed.util.Constants.Companion.WEBVIEW_URL
 
 
@@ -24,7 +25,8 @@ fun InstasellPlayerScreen(livestreamId:String, navController: NavController) {
         .Builder()
         .scheme("https")
         .authority(WEBVIEW_URL)
-        .path("/")
+        .path("/$ORIGIN_FQDN")
+        .appendQueryParameter("platform","android")
         .appendQueryParameter("isl-livestream-id",livestreamId)
         .build()
 
